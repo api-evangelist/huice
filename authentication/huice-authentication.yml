@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://open.wangdian.cn/open/guide?path=guide_signsf
+docs: https://open.wangdian.cn/open/guide?path=guide_kfzn
+summary:
+  types:
+  - signature
+  api_key_in:
+  - query
+  oauth2_flows: []
+  note: >-
+    Wangdiantong Open Platform uses a custom request-signature scheme (sid + appkey + timestamp +
+    sign). It is not OAuth2/OIDC and not a simple static bearer key; the shared appsecret is never
+    transmitted and is used only to compute the sign.
+schemes:
+- name: WangdiantongSignature
+  type: signature
+  in: request-parameters
+  parameters:
+  - name: sid
+    required: true
+    description: Seller account identifier assigned by Wangdiantong.
+  - name: appkey
+    required: true
+    description: Interface (integration) account created in the self-service integration module.
+  - name: timestamp
+    required: true
+    description: Beijing time as a 10-digit Unix epoch seconds value.
+  - name: sign
+    required: true
+    description: 32-bit lowercase MD5 signature of the request parameters (see signature below).
+  secret:
+    name: appsecret
+    transmitted: false
+    description: Shared secret paired with appkey; used only to compute sign, never sent on the wire.
+  signature:
+    algorithm: MD5
+    output: 32-bit lowercase hex
+    docs: https://open.wangdian.cn/open/guide?path=guide_signsf
+    steps:
+    - Include all request parameters except appsecret.
+    - Sort parameters by key name in ascending order.
+    - For each pair, prefix the key with its 2-digit key-length and a '-'; prefix the value with its
+      4-digit value-length (or the actual length when it exceeds 4 digits) and a '-'; join key and
+      value parts with ':'; terminate each parameter with ';' (except the last).
+    - Append appsecret directly to the end of the concatenated string (no separator).
+    - Compute the 32-bit lowercase MD5 of that string; the result is the sign parameter.
+  example_concatenation: '06-appkey:0008-test2-xx;08-end_time:0019-2016-08-01 13:00:00'
