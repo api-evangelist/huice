@@ -1,0 +1,30 @@
+# Huice (慧策) — Wangdiantong Open Platform
+
+> Huice (慧策) is a Chinese enterprise-software company whose flagship product, Wangdiantong (旺店通)
+> ERP, is a tailor-made e-commerce management system covering orders, warehouse/inventory (WMS),
+> goods, procurement, after-sales, and financial operations. Its public Open Platform exposes an HTTP
+> API (openapi2) for third-party integrators, secured with a sid + appkey + timestamp + MD5 signature
+> scheme, page_no/page_size pagination, and a code/message response envelope.
+
+## APIs
+
+- [Wangdiantong Open Platform API](https://open.wangdian.cn/qyb/open/apidoc): HTTP API (openapi2), base https://api.wangdian.cn/openapi2/ (sandbox https://sandbox.wangdian.cn/openapi2/). Named PHP methods across basics, goods, orders, after-sales, procurement, and inventory (e.g. trade_push.php, trade_query.php, goods_query.php, stock_query.php).
+
+## Docs
+
+- [Developer Portal](https://open.wangdian.cn/): Huice Open Platform home.
+- [Documentation Center](https://open.wangdian.cn/open/guide?path=guide_kfzn): developer guides.
+- [API Reference](https://open.wangdian.cn/qyb/open/apidoc): categorized method reference.
+- [Signature Algorithm](https://open.wangdian.cn/open/guide?path=guide_signsf): sign computation (sorted length-prefixed params + appsecret, 32-bit lowercase MD5).
+- [Self-service Integration](https://open.wangdian.cn/open/abut): obtain appkey/appsecret.
+- [Support Center](https://open.wangdian.cn/open/support): support.
+- [Announcements](https://open.wangdian.cn/open/notice): platform notices.
+
+## Artifacts
+
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/huice/refs/heads/main/authentication/huice-authentication.yml): signature auth profile.
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/huice/refs/heads/main/conventions/huice-conventions.yml): pagination, envelope, versioning, hosts.
+- [Sandbox](https://raw.githubusercontent.com/api-evangelist/huice/refs/heads/main/sandbox/huice-sandbox.yml): test vs production separation.
+- [Error Codes](https://raw.githubusercontent.com/api-evangelist/huice/refs/heads/main/errors/huice-error-codes.yml): code/message envelope.
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/huice/refs/heads/main/lifecycle/huice-lifecycle.yml): versioning (openapi2).
+- [Domain Security](https://raw.githubusercontent.com/api-evangelist/huice/refs/heads/main/security/huice-domain-security.yml): TLS/DNS posture.

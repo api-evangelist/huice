@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://open.wangdian.cn/qyb/open/apidoc/doc?path=trade_query.php
+docs: https://open.wangdian.cn/open/abut
+api: Wangdiantong Open Platform API (openapi2)
+test_live_separation:
+  model: separate-host
+  sandbox_base: https://sandbox.wangdian.cn/openapi2/
+  production_base: https://api.wangdian.cn/openapi2/
+  note: >-
+    Each documented method lists a distinct testing (sandbox.wangdian.cn) and production
+    (api.wangdian.cn) endpoint under /openapi2/. The same sid + appkey + sign scheme applies to both.
+credentials:
+  model: self-service
+  note: >-
+    Sandbox/interface credentials (appkey + appsecret) are issued per integrator through the
+    self-service integration module after registration; no shared public test credentials are
+    published, so none are recorded here (no fabrication).
+  self_service_url: https://open.wangdian.cn/open/abut
+test_values:
+  published: false
+  note: The public documentation does not publish fixed magic test identifiers or fixture values.

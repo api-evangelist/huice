@@ -1,0 +1,15 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/ on Open Platform + API hosts
+hosts:
+- host: https://open.wangdian.cn
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://api.wangdian.cn
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+note: No /.well-known/ discovery documents were served (all probed paths returned 404). Recorded as valid negative results.

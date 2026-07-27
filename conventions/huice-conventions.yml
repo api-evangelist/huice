@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://open.wangdian.cn/qyb/open/apidoc
+docs: https://open.wangdian.cn/open/guide?path=guide_kfzn
+api: Wangdiantong Open Platform API (openapi2)
+authentication:
+  style: request-signature (sid + appkey + timestamp + MD5 sign)
+  ref: authentication/huice-authentication.yml
+hosts:
+  production: https://api.wangdian.cn/openapi2/
+  sandbox: https://sandbox.wangdian.cn/openapi2/
+  ref: sandbox/huice-sandbox.yml
+request:
+  transport: HTTP
+  path_style: named PHP methods under /openapi2/ (e.g. trade_query.php, trade_push.php, goods_query.php)
+  parameters: form-style key/value request parameters signed into the sign field
+pagination:
+  style: page-number
+  params:
+  - name: page_no
+    default: 0
+    description: Zero-based page index.
+  - name: page_size
+    default: 40
+    range: 1-100
+    description: Records per page.
+  response_fields:
+  - name: total_count
+    description: Total matching records; returned only when page_no = 0.
+versioning:
+  scheme: uri-path
+  current: openapi2
+  ref: lifecycle/huice-lifecycle.yml
+error_envelope:
+  fields:
+  - name: code
+    type: int
+    description: Status code; 0 = success, non-zero = failure.
+  - name: message
+    type: string
+    description: Human-readable error/status description.
+  ref: errors/huice-error-codes.yml
+idempotency:
+  supported: false
+  note: No documented idempotency-key mechanism; write methods (e.g. *_push.php) are not documented as idempotent.
+rate_limiting:
+  documented: false
+  note: No public rate-limit signaling headers documented on the Open Platform.

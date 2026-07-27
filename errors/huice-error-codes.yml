@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: https://open.wangdian.cn/qyb/open/apidoc/doc?path=trade_query.php
+docs: https://open.wangdian.cn/open/guide?path=guide_kfzn
+api: Wangdiantong Open Platform API (openapi2)
+format: custom-envelope
+envelope:
+  fields:
+  - name: code
+    type: int
+    description: Status code returned by every method. 0 indicates success; any non-zero value indicates failure.
+  - name: message
+    type: string
+    description: Human-readable status or error description accompanying the code.
+success_code: 0
+note: >-
+  The Open Platform returns a uniform code/message envelope on every openapi2 method. A full registry
+  of non-zero failure codes is documented per method inside the API reference (login-gated for the
+  detailed pages) and is not enumerated verbatim here to avoid fabrication; the envelope contract and
+  success semantics above are captured from the published trade_query.php reference.

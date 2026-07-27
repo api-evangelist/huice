@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://open.wangdian.cn/qyb/open/apidoc
+docs: https://open.wangdian.cn/open/notice
+api: Wangdiantong Open Platform API
+versioning:
+  scheme: uri-path
+  current: openapi2
+  docs: https://open.wangdian.cn/qyb/open/apidoc
+  note: The Open Platform HTTP API is served under the /openapi2/ path segment (v2 of the open API).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No public deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+status_page: null
+sla:
+  url: null
+announcements: https://open.wangdian.cn/open/notice

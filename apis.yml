@@ -1,8 +1,26 @@
 aid: huice
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/huice.png
 name: Huice
-description: 'Huice is a company surfaced as a portfolio company of softbank-vision-fund and added to
-  the API Evangelist network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Huice (慧策) is a Chinese enterprise software company whose flagship product, Wangdiantong
+  (旺店通) ERP, is a tailor-made e-commerce management system for merchants operating across multiple
+  online channels. It provides order management, warehouse and inventory management (WMS), goods and
+  product-archive management, procurement, after-sales/returns processing, and financial operations
+  (慧经营). Huice runs a public Open Platform (open.wangdian.cn) exposing an HTTP API (openapi2) for
+  third-party integrators to synchronize shops, goods, orders, stock, purchasing, and logistics. The
+  API uses a sid + appkey + timestamp + MD5 signature (sign) authentication scheme, page_no/page_size
+  pagination, and a code/message response envelope, with separate sandbox and production hosts.'
 url: https://raw.githubusercontent.com/api-evangelist/huice/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,13 +30,77 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Enterprise
-apis: []
+- E-commerce
+- ERP
+- Order Management
+- Inventory Management
+- Warehouse Management
+- Retail
+- SaaS
+- China
+apis:
+- name: Wangdiantong Open Platform API
+  description: 'The Wangdiantong (旺店通) ERP Open Platform HTTP API (openapi2). Endpoints are named
+    PHP methods (e.g. trade_push.php, trade_query.php, goods_push.php, stock_query.php) grouped into
+    basics (shops/warehouses/logistics/suppliers), goods, orders, after-sales, procurement, and
+    inventory. Authentication is via sid + appkey + timestamp + MD5 sign; pagination via
+    page_no/page_size; responses return code (0 = success) and message.'
+  humanURL: https://open.wangdian.cn/qyb/open/apidoc
+  baseURL: https://api.wangdian.cn/openapi2/
+  tags:
+  - E-commerce
+  - ERP
+  - Orders
+  - Inventory
+  properties:
+  - type: Authentication
+    url: authentication/huice-authentication.yml
+  - type: Conventions
+    url: conventions/huice-conventions.yml
+  - type: Sandbox
+    url: sandbox/huice-sandbox.yml
+  - type: ErrorCatalog
+    url: errors/huice-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/huice-lifecycle.yml
+common:
+- type: Website
+  url: https://www.wangdian.cn/
+- type: DeveloperPortal
+  url: https://open.wangdian.cn/
+- type: Documentation
+  url: https://open.wangdian.cn/open/guide?path=guide_kfzn
+- type: APIReference
+  url: https://open.wangdian.cn/qyb/open/apidoc
+- type: Support
+  url: https://open.wangdian.cn/open/support
+- type: Authentication
+  url: authentication/huice-authentication.yml
+- type: Conventions
+  url: conventions/huice-conventions.yml
+- type: Sandbox
+  url: sandbox/huice-sandbox.yml
+- type: ErrorCatalog
+  url: errors/huice-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/huice-lifecycle.yml
+- type: WellKnown
+  url: well-known/huice-well-known.yml
+- type: LLMsTxt
+  url: llms/huice-llms.txt
+- type: DomainSecurity
+  url: security/huice-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
