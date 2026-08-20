@@ -34,6 +34,17 @@ modified: '2026-07-19'
 tags:
 - Company
 - Enterprise
+- E-Commerce
+- ERP
+- Order Management
+- Inventory Management
+- Warehouse Management
+- Retail
+- Software-as-a-Service
+- China
+tags_raw:
+- Company
+- Enterprise
 - E-commerce
 - ERP
 - Order Management
@@ -52,6 +63,11 @@ apis:
   humanURL: https://open.wangdian.cn/qyb/open/apidoc
   baseURL: https://api.wangdian.cn/openapi2/
   tags:
+  - E-Commerce
+  - ERP
+  - Order
+  - Inventory
+  tags_raw:
   - E-commerce
   - ERP
   - Orders
