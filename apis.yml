@@ -41,7 +41,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-10-06'
 tags:
 - Company
 - Enterprise
@@ -95,6 +95,8 @@ apis:
   - type: Lifecycle
     url: lifecycle/huice-lifecycle.yml
 common:
+- url: https://www.wangdian.cn/news/
+  type: Blog
 - type: Website
   url: https://www.wangdian.cn/
 - type: DeveloperPortal
