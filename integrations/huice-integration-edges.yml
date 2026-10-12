@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/huice/integrations
+- https://n8n.io/integrations/huice/
+- https://composio.dev/toolkits/huice
+- https://monid.ai/tools/huice
+checked:
+- https://composio.dev/toolkits/huice
+- https://monid.ai/tools/huice
+- https://n8n.io/integrations/huice/
+- https://zapier.com/apps/huice/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
